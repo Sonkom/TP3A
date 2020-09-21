@@ -2,7 +2,7 @@
 
 int pgcd(int a, int b)
 {
-  int ans = 1; //valeur de retourd'initialisation
+  int ans = 1; //valeur de retour
   int buff1 = 0;
   int buff2 = 0;
 

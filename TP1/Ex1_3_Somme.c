@@ -3,7 +3,7 @@
 /*
   En rentrant un n négatif, le résultat donnera 0 pour la première et n pour la deuxième.
   C'est normal puisque dans le cas d'une while il n'y aura aucune itération tandis que avec le do while il y aura une itération.
-  Une amélioration possible serait de gérer se cas.
+  Une amélioration possible serait de gérer ce cas.
 */
 
 int somme1(int n){

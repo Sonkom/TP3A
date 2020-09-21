@@ -2,7 +2,7 @@
 
 //Fonction retournant 1 si le parametre année est bissextile et 0 sinon
 int est_bissextile(int annee){
-  int resultat=0;
+  int resultat = 0;
   if(annee%4 == 0){
     resultat = 1;
     if(annee%100 == 0 && annee%400 != 0){

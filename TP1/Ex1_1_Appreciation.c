@@ -3,7 +3,7 @@
 /*
   Pour générer les autres lettres, on peut soit vérifier la valeur donnée par l'utilisateur et lui redemander tant qu'elle n'est pas valide.
   Sinon nous pouvons traiter ces cas dans les fonctions comme étant des cas d'erreurs grace au else, à une condition particulière ou au default.
-  Nous avons choisi la deuxième option
+  Nous avons choisi la deuxième option.
 */
 
 //Version avec les instructions if imbriqués

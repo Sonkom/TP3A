@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+/* Pour tester ces procédures, nous avons tout simplement jouer au jeu nous mêmes, connaissant nos tables de multiplication.
+Nous avons aussi tester le cas où il y aurait des erreurs faites, pour voir si le message d'encouragement s'affichait,
+ainsi que le message d'erreur lors de la demande de la table. */
 
 void JeuMulti(void) {
 
@@ -55,10 +58,6 @@ void JeuMultiPoints(void){
   else printf("Dommage, rentraîne toi sur la table de multiplication de %d !\nTu as eu %d fautes.\n",table, mistakes);
 
 }
-
-/* Pour tester ces procédures, nous avons tout simplement jouer au jeu nous mêmes, connaissant nos tables de multiplication.
-Nous avons aussi tester le cas où il y aurait des erreurs faites, pour voir si le message d'encouragement s'affichait,
-ainsi que le message d'erreur lors de la demande de la table. */
 
 int main() {
 
