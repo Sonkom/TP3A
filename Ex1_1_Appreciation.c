@@ -6,6 +6,7 @@
   Nous avons choisi la deuxième option
 */
 
+//Version avec les instructions if imbriqués
 void appr1(char note){
   if(note == 'A'){
     printf("Très bien\n");
@@ -22,6 +23,7 @@ void appr1(char note){
   }
 }
 
+//Version avec les instructions if en séquence
 void appr2(char note){
   if(note == 'A') printf("Très bien\n");
 
@@ -36,6 +38,7 @@ void appr2(char note){
   if(note != 'A' && note != 'B' && note != 'C' && note != 'D' && note != 'E') printf("Erreur : Entree non valide\n");
 }
 
+//Version avec l'instruction switch
 void appr3(char note){
   switch (note) {
     case 'A':
@@ -62,7 +65,7 @@ int main() {
   char note;
   printf("Note : ");
   scanf("%c",&note);
-  printf("Version avec les instructions if imbriquées :\n");
+  printf("Version avec les instructions if imbriqués :\n");
   appr1(note);
   printf("Version avec les instructions if en séquence :\n");
   appr2(note);
