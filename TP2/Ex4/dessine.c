@@ -28,3 +28,17 @@ void dessineCarreDiagonale(int x, int y, int taille){
   line(x,y,x,y-taille);
   line(x-l,y-l,x+l,y-l);
 }
+
+void dessineMosaique(int taille, int x, int y, int largeur, int hauteur){
+  for(int i=0; i < hauteur*2-1; i++){
+    for(int j=0; j < largeur-i%2; j++){
+      dessineCarre(x+taille/2*(i%2+1)+j*taille,y-i*taille/2,taille);
+    }
+  }
+}
+
+void dessineMosaiqueAvecSouris(int taille,int largeur, int hauteur){
+  int x,y;
+  cliquer_xy(&x, &y);
+  dessineMosaique(taille, x, y, largeur, hauteur);
+}

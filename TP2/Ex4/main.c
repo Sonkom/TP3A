@@ -10,9 +10,7 @@ int main() {
 
     gr_inits_w(500,500,"test");
 
-    dessineCarre(100,100,100);
-
-    dessineCarreDiagonale(200,100,100);
+    dessineMosaiqueAvecSouris(50,8,5);
 
     cliquer();
 
