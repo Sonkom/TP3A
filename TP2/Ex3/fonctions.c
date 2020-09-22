@@ -21,7 +21,7 @@ unsigned int reste(unsigned int a, unsigned int b){
   unsigned int quot = 0;
   quot = quotient(a,b);
   if (quot == -1) printf("Reste indéfini : problème de quotient\n");
-  else 
+  else reste = a - quot*b;
   }
 
 }
