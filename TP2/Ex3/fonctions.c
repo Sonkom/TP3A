@@ -16,12 +16,15 @@ int quotient(unsigned int a, unsigned int b){
   return ans;
 }
 
-unsigned int reste(unsigned int a, unsigned int b){
+int reste(unsigned int a, unsigned int b){
   unsigned int reste = 0;
-  unsigned int quot = 0;
+  int quot = 0;
   quot = quotient(a,b);
-  if (quot == -1) printf("Reste indéfini : problème de quotient\n");
-  else reste = a - quot*b;
+  if (quot == -1) {
+    reste = -1;
+    printf("Reste indéfini : problème de quotient\n");
   }
+  else reste = a - quot*b;
 
+  return reste;
 }
