@@ -10,7 +10,9 @@ int main() {
 
     gr_inits_w(500,500,"test");
 
-    dessineCarre(100,100,20);
+    dessineCarre(100,100,100);
+
+    dessineCarreDiagonale(200,100,100);
 
     cliquer();
 

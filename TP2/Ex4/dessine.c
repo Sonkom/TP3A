@@ -14,8 +14,17 @@ void setCouleurAleatoire(){
 void dessineCarre(int x, int y, int taille){
   setCouleurAleatoire();
   int l = taille/2;
+
   line(x,y,x-l,y-l);
   line(x-l,y-l,x,y-taille);
   line(x,y,x+l,y-l);
   line(x+l,y-l,x,y-taille);
+}
+
+void dessineCarreDiagonale(int x, int y, int taille){
+  dessineCarre(x,y,taille);
+  int l = taille/2;
+
+  line(x,y,x,y-taille);
+  line(x-l,y-l,x+l,y-l);
 }
