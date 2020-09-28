@@ -170,12 +170,31 @@ void test_sommeDesImpairs(void)
 
   //Test de valeurs arbitraires
 
+  if (sommeDesImpairs(3,9) != 24){
+    success = 0;
+    printf("sommeDesImpairs(3,9) = %d\n", sommeDesImpairs(3,9));
+  }
+  if (sommeDesImpairs(5,13) != 45){
+    success = 0;
+    printf("sommeDesImpairs(5,13) = %d\n", sommeDesImpairs(5,13));
+  }
+  if (sommeDesImpairs(7,15) != 55){
+    success = 0;
+    printf("sommeDesImpairs(7,15) = %d\n", sommeDesImpairs(7,15));
+  }
+
+
+  if (success == 0) printf("sommeDesImpairs() non fonctionnelle, ne calcule pas correctement\n");
+
 
   //Test de cas particuliers
   if (sommeDesImpairs(2,4) != 0) success = -1;
   if (sommeDesImpairs(0,2) != 0) success = -1;
   if (sommeDesImpairs(2,0) != 0) success = -1;
   if (sommeDesImpairs(9,3) != 0) success = -1;
+
+  if (success == -1) printf("sommeDesImpairs() non fonctionnelle, cas particuliers pas traités correctement\n");
+
 
   if (success == 1) printf("sommeDesImpairs() foncionnelle\n");
   else printf("sommeDesImpairs() non fonctionnelle");
@@ -186,6 +205,27 @@ void test_estUneDecompositionDe(void)
   int success = 1;
 
   //Test de valeurs arbitraires
+  if (estUneDecompositionDe(13,19) != 4){
+    success = 0;
+    printf("estUneDecompositionDe(3,9) = %d\n", estUneDecompositionDe(3,9));
+  }
+  if (estUneDecompositionDe(5,13) != -1){
+    success = 0;
+    printf("estUneDecompositionDe(5,13) = %d\n", estUneDecompositionDe(5,13));
+  }
+  if (estUneDecompositionDe(3,5) != 2){
+    success = 0;
+    printf("estUneDecompositionDe(7,15) = %d\n", estUneDecompositionDe(7,15));
+  }
+
+  if (success == 0) printf("estUneDecompositionDe() non fonctionnelle, ne calcule pas correctement\n");
+
+  //Test de cas particuliers
+  if (estUneDecompositionDe(2,4) != 0) success = -1;
+  if (estUneDecompositionDe(0,2) != 0) success = -1;
+  if (estUneDecompositionDe(2,0) != 0) success = -1;
+  if (estUneDecompositionDe(9,3) != 0) success = -1;
+
 
   if (success == 1) printf("test_estUneDecompositionDe() foncionnelle\n");
   else printf("test_estUneDecompositionDe() non fonctionnelle\n");
@@ -193,11 +233,10 @@ void test_estUneDecompositionDe(void)
 
 int main(void) {
 
-  printf("%d\n",0/2);
   test_quotient();
   test_reste();
   test_ppcm();
-  test_puissanceMB();
+  //test_puissanceMB();
   test_sommeDesImpairs();
   test_estUneDecompositionDe();
 
