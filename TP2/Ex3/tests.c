@@ -42,7 +42,7 @@ void test_quotient(void)
   if (success == -1) printf("quotient() non fonctionnelle : problème dans les cas particuliers\n");
 
 
-  if (success == 1) printf("quotient() foncionnelle\n");
+  if (success == 1) printf("quotient() fonctionnelle\n");
 }
 
 void test_reste(void)
@@ -68,7 +68,7 @@ void test_reste(void)
     printf("reste(69,67) = %d\n", reste(69,67));
   }
 
-  if (success == 1) printf("reste() foncionnelle\n");
+  if (success == 1) printf("reste() fonctionnelle\n");
   else printf("reste() non fonctionnelle\n");
 }
 
@@ -115,7 +115,7 @@ void test_ppcm(void)
   if (success == -1) printf("ppcm() non fonctionnelle, cas particuliers pas traités correctement\n");
 
 
-  if (success == 1) printf("ppcm() foncionnelle\n");
+  if (success == 1) printf("ppcm() fonctionnelle\n");
 
 }
 
@@ -161,7 +161,7 @@ void test_puissanceMB(void)
   if (success == -1) printf("puissanceMB() non fonctionnelle, cas particuliers non traités correctement\n");
 
 
-  if (success == 1) printf("puissanceMB() foncionnelle\n");
+  if (success == 1) printf("puissanceMB() fonctionnelle\n");
 }
 
 void test_sommeDesImpairs(void)
@@ -196,7 +196,7 @@ void test_sommeDesImpairs(void)
   if (success == -1) printf("sommeDesImpairs() non fonctionnelle, cas particuliers pas traités correctement\n");
 
 
-  if (success == 1) printf("sommeDesImpairs() foncionnelle\n");
+  if (success == 1) printf("sommeDesImpairs() fonctionnelle\n");
   else printf("sommeDesImpairs() non fonctionnelle");
 }
 
@@ -227,7 +227,7 @@ void test_estUneDecompositionDe(void)
   if (estUneDecompositionDe(9,3) != 0) success = -1;
 
 
-  if (success == 1) printf("test_estUneDecompositionDe() foncionnelle\n");
+  if (success == 1) printf("test_estUneDecompositionDe() fonctionnelle\n");
   else printf("test_estUneDecompositionDe() non fonctionnelle\n");
 }
 

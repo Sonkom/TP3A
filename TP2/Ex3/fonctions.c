@@ -79,16 +79,19 @@ int puissanceMB(int x, int n)
   int y = 1;
   int z = x;
 
-  while(n_tmp != 0){
+  if ((n < 0) || ((n == 0) && (x == 0))) y = -1;
+  else {
+    while(n_tmp != 0){
 
-    n_tmp = n;
-    n = n/2;
-    //printf("\t\t1\nN : %d Y : %d Z : %d\n\n", n, y, z);
-    if(n_tmp%2 != 0){
-      y=z*y;
+      n_tmp = n;
+      n = n/2;
+      //printf("\t\t1\nN : %d Y : %d Z : %d\n\n", n, y, z);
+      if(n_tmp%2 != 0){
+        y=z*y;
+      }
+      z = z*z;
+      //printf("\t\t2\nN : %d Y : %d Z : %d\n\n", n_tmp, y, z);
     }
-    z = z*z;
-    //printf("\t\t2\nN : %d Y : %d Z : %d\n\n", n_tmp, y, z);
   }
   //printf("\t\t3\nN : %d Y : %d Z : %d\n\n", n_tmp, y, z);
   return y;
