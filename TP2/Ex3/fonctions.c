@@ -87,10 +87,10 @@ int puissanceMB(int x, int n)
       x_temp = x_temp * x_temp;
     } while(n_temp != 0);*/
     do {
+      if (n_temp != 0) result = x_temp * result;
       n_temp = n_temp/2;
-      if ((n_temp*2)%2 != 0) result = x_temp * result;
       x_temp = x_temp * x_temp;
-    } while(n_temp != 0);
+    } while(n_temp >= 1);
   }
   return result;
 }

@@ -145,11 +145,20 @@ void test_puissanceMB(void)
 
 
   //Test des cas particuliers
-  if (puissanceMB(40,-1) != -1) success = -1;
-  if (puissanceMB(8,0) != 1) success = -1;
-  if (puissanceMB(0,0) != 1) success = -1;
+  if (puissanceMB(40,-1) != -1){
+    success = -1;
+    printf("puissanceMB(40,-1) = %d\n",puissanceMB(40,-1));
+  }
+  if (puissanceMB(8,0) != 1){
+    success = -1;
+    printf("puissanceMB(8,0) = %d\n",puissanceMB(8,0));
+  }
+  if (puissanceMB(0,0) != -1){
+    success = -1;
+    printf("puissanceMB(0,0) = %d\n",puissanceMB(0,0));
+  }
 
-  if (success == -1) printf("ppcm() non fonctionnelle, cas particuliers pas traités correctement\n");
+  if (success == -1) printf("puissanceMB() non fonctionnelle, cas particuliers non traités correctement\n");
 
 
   if (success == 1) printf("puissanceMB() foncionnelle\n");
@@ -184,6 +193,7 @@ void test_estUneDecompositionDe(void)
 
 int main(void) {
 
+  printf("%d\n",0/2);
   test_quotient();
   test_reste();
   test_ppcm();
