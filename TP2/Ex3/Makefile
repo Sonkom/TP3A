@@ -5,6 +5,8 @@ all: fonctions.o main.o
 
 Test : tests.o fonctions.o
 	gcc -o Test -Wall tests.o fonctions.o
+	rm *.o
+	rm *.gch
 
 main.o : main.c
 	gcc -c -Wall main.c

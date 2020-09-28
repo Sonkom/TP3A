@@ -1,42 +1,29 @@
 #include "fonctions.h"
 
-int quotient(unsigned int a, unsigned int b)
+int quotient(int a, int b)
 {
   int ans = 0;
   int reste = 0;
 
-  //Cas où a < b
-  int a_temp, b_temp;
-  if (a >= b){
-    b_temp = b;
-    a_temp = a;
-  } else {
-    a_temp = b;
-    b_temp = a;
-  }
-
-  reste = a_temp - b_temp;
-
-  if (b_temp <= 0) {
-    printf("Calcul indéfini\n");
-    ans = -1;
-  } else {
-    while (reste > b_temp){
+  if ((b <= 0) || (a < b)) ans = -1;
+  else {
+    reste = a;
+    while (reste >= b){
       ans++;
-      reste = reste - b_temp;
+      reste = reste - b;
+
     }
   }
   return ans;
 }
 
-int reste(unsigned int a, unsigned int b)
+int reste(int a, int b)
 {
   unsigned int reste = 0;
   int quot = 0;
   quot = quotient(a,b);
   if (quot == -1) {
     reste = -1;
-    printf("Reste indéfini : problème de quotient\n");
   }
   else reste = a - quot*b;
 
@@ -52,7 +39,7 @@ int valeurAbsolue(int n)
 }
 
 /* Fonction PGCD du TP n°1 utilisé ci dessous */
-int pgcd(int a, int b)
+int pgcd(unsigned int a, unsigned int b)
 {
   int ans = 1; //valeur de retour
   int buff1 = 0;
@@ -81,7 +68,8 @@ int pgcd(int a, int b)
 int ppcm(int a, int b)
 {
   int result = 1;
-  result = valeurAbsolue(a*b) / pgcd(a,b);
+  if ((a <= 0) || (b <= 0)) result = -1;
+  else result = valeurAbsolue(a*b) / pgcd(a,b);
   return result;
 }
 
@@ -91,8 +79,13 @@ int puissanceMB(int x, int n)
   int result = 1;
   int x_temp = x;
 
-  if (n < 0) result = -1;
+  if ((n < 0) || ((x == 0) && (n == 0))) result = -1;
   else {
+    /*do {
+      n_temp = n_temp/2;
+      if ((n_temp*2)%2 != 0) result = x_temp * result;
+      x_temp = x_temp * x_temp;
+    } while(n_temp != 0);*/
     do {
       n_temp = n_temp/2;
       if ((n_temp*2)%2 != 0) result = x_temp * result;
@@ -102,7 +95,8 @@ int puissanceMB(int x, int n)
   return result;
 }
 
-int sommeDesImpairs(int d, int f){
+int sommeDesImpairs(int d, int f)
+{
   int result = 0;
   int d_temp = d;
 
@@ -117,7 +111,8 @@ int sommeDesImpairs(int d, int f){
   return result;
 }
 
-int estUneDecompositionDe(int d, int f){
+int estUneDecompositionDe(int d, int f)
+{
   int search = 0;
   int somme = 0;
 

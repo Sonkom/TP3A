@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <math.h>
 
-int quotient(unsigned int a, unsigned int b);
-int reste(unsigned int a, unsigned int b);
+int quotient(int a, int b);
+int reste(int a, int b);
 int valeurAbsolue(int n);
 int ppcm(int a, int b);
 int puissanceMB(int x, int n);
@@ -12,4 +12,4 @@ int estUneDecompositionDe(int d, int f);
 
 
 //fonctions provenant du TP1
-int pgcd(int a, int b);
+int pgcd(unsigned int a, unsigned int b);
