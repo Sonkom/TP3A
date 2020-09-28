@@ -75,24 +75,23 @@ int ppcm(int a, int b)
 
 int puissanceMB(int x, int n)
 {
-  int n_temp = n;
-  int result = 1;
-  int x_temp = x;
+  int n_tmp = n;
+  int y = 1;
+  int z = x;
 
-  if ((n < 0) || ((x == 0) && (n == 0))) result = -1;
-  else {
-    /*do {
-      n_temp = n_temp/2;
-      if ((n_temp*2)%2 != 0) result = x_temp * result;
-      x_temp = x_temp * x_temp;
-    } while(n_temp != 0);*/
-    do {
-      if (n_temp != 0) result = x_temp * result;
-      n_temp = n_temp/2;
-      x_temp = x_temp * x_temp;
-    } while(n_temp >= 1);
+  while(n_tmp != 0){
+
+    n_tmp = n;
+    n = n/2;
+    //printf("\t\t1\nN : %d Y : %d Z : %d\n\n", n, y, z);
+    if(n_tmp%2 != 0){
+      y=z*y;
+    }
+    z = z*z;
+    //printf("\t\t2\nN : %d Y : %d Z : %d\n\n", n_tmp, y, z);
   }
-  return result;
+  //printf("\t\t3\nN : %d Y : %d Z : %d\n\n", n_tmp, y, z);
+  return y;
 }
 
 int sommeDesImpairs(int d, int f)

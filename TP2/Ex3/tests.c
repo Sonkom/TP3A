@@ -236,7 +236,7 @@ int main(void) {
   test_quotient();
   test_reste();
   test_ppcm();
-  //test_puissanceMB();
+  test_puissanceMB();
   test_sommeDesImpairs();
   test_estUneDecompositionDe();
 
