@@ -1,5 +1,5 @@
 all: matrice.o main.o
-	gcc -o dessin -Wall graphlib.o matrice.o main.o
+	gcc -o prog -Wall matrice.o main.o
 	rm *.o
 	rm *.gch
 
