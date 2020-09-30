@@ -1,6 +1,7 @@
 #include "fonctions.h"
 
-int main(void) {
+int main(void)
+{
 
 /*---- INITIALISATION ----*/
 
@@ -12,8 +13,8 @@ int main(void) {
   float ecarT1 = 3.23023219;
 
   float *test2 = NULL;
-  int rang2_1 = 0; //random
-  int rang2_2 = 0; //random
+  int rang2_1 = -1; //random
+  int rang2_2 = -1; //random
   float moy2 = -1;
   float var2 = -1;
   float ecarT2 = -1;
@@ -25,7 +26,7 @@ int main(void) {
   float var3 = 0;
   float ecarT3 = 0;
 
-  float test4[6] = {9.99, 9.99, 9.99, 9.99, 9.99};
+  float test4[6] = {9.99, 9.99, 9.99, 9.99, 9.99, 9.99};
   int rang4_1 = 0; //9.99
   int rang4_2 = 0; //9.99
   float moy4 = 9.99;
@@ -66,9 +67,9 @@ int main(void) {
 
   printf("\nTest rechercherValeur()\n");
   if (test_rechercherVal(test1, 5, 13.5, rang1_1) && test_rechercherVal(test1, 5, 10.5, rang1_2)) printf("test 1 : succès\n");
-  if (test_rechercherVal(test2, 42, 42, rang2_1) && test_rechercherVal(test1, 42, 42, rang2_2)) printf("test 1 : succès\n");
-  if (test_rechercherVal(test3, 1, 5.0, rang3_1) && test_rechercherVal(test1, 5, 5.0, rang3_2)) printf("test 1 : succès\n");
-  if (test_rechercherVal(test4, 6, 9.99, rang4_1) && test_rechercherVal(test1, 5, 9.99, rang4_2)) printf("test 1 : succès\n");
+  if (test_rechercherVal(test2, 42, 42, rang2_1) && test_rechercherVal(test2, 42, 42, rang2_2)) printf("test 2 : succès\n");
+  if (test_rechercherVal(test3, 1, 5.0, rang3_1) && test_rechercherVal(test3, 5, 6.0, rang3_2)) printf("test 3 : succès\n");
+  if (test_rechercherVal(test4, 6, 9.99, rang4_1) && test_rechercherVal(test4, 5, 9.99, rang4_2)) printf("test 4 : succès\n");
 
 
   return 0;

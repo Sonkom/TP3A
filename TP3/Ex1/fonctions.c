@@ -24,10 +24,11 @@ float minimumNote(float *tab, int len)
 
 float maximumNote(float *tab, int len)
 {
-  float result = tab[0];
+  float result = 0;
 
   if (tab == NULL) result = -1;
   else {
+    result = tab[0];
     for (int i = 1; i < len; i++)
       if (result < tab[i]) result = tab[i];
   }
@@ -40,9 +41,14 @@ float calculeMoyenne(float *tab, int len)
 
   if (tab == NULL) result = -1;
   else {
-    for (int i = 0; i < len; i++) result += tab[i];
-    result = (result / len);
+    for (int i = 0; i < len; i++)
+    {
+      result += tab[i];
+    //printf("%f\n",result);
+    }
+    result = (result / (float)len);
   }
+//  printf("moyenne = %f\n",result);
 
   return result;
 }
@@ -86,7 +92,6 @@ int rechercherValeur(float *tab, int len, float search)
     while ((tab[result] != search) && (result < len)) result++;
     if (result >= len) result = -1;
   }
-
   return result;
 }
 
@@ -118,10 +123,14 @@ int test_maximumNote(float *tab_test, int len, float max)
 int test_calculMoy(float *tab_test, int len, float moy)
 {
   int success = 1;
-  float test;
+  float test, verif;
 
   test = calculeMoyenne(tab_test, len);
-  if (test != moy) success = 0;
+
+/* Cette vérification est présente dû à un problème de calcul de la moyenne : le calcul ne donnera pas une valeur exacte mais ue valeur approchée.
+  Le calcul de l'erreur nous donnera une approximation de cette erreur. S'il est inférieur à 0.1%, nous considérerons les valeurs égales.*/
+  verif = (abs(moy - test) / moy);
+  if (verif > 0.0001) success = 0;
 
   return success;
 }
@@ -129,10 +138,14 @@ int test_calculMoy(float *tab_test, int len, float moy)
 int test_calculVar(float *tab_test, int len, float var)
 {
   int success = 1;
-  float test;
+  float test, verif;
 
   test = calculeVariance(tab_test, len);
-  if (test != var) success = 0;
+
+  /* Cette vérification est présente dû à un problème de calcul de la variance : le calcul ne donnera pas une valeur exacte mais ue valeur approchée.
+    Le calcul de l'erreur nous donnera une approximation de cette erreur. S'il est inférieur à 0.1%, nous considérerons les valeurs égales.*/
+    verif = (abs(var - test) / var);
+    if (verif > 0.0001) success = 0;
 
   return success;
 }
@@ -140,10 +153,14 @@ int test_calculVar(float *tab_test, int len, float var)
 int test_calculEcT(float *tab_test, int len, float omega)
 {
   int success = 1;
-  float test;
+  float test, verif;
 
   test = calculeEcartType(tab_test, len);
-  if (test != omega) success = 0;
+
+  /* Cette vérification est présente dû à un problème de calcul de l'écart-type : le calcul ne donnera pas une valeur exacte mais ue valeur approchée.
+    Le calcul de l'erreur nous donnera une approximation de cette erreur. S'il est inférieur à 0.1%, nous considérerons les valeurs égales.*/
+    verif = (abs(omega - test) / omega);
+    if (verif > 0.0001) success = 0;
 
   return success;
 }
