@@ -1,0 +1,43 @@
+Valeur attendues :
+
+Note la plus basse =
+Note la plus élevée =
+Moyenne =
+Variance =
+Ècart-type =
+Rang dans le tableau de la valeur X =
+Rang dans le tableau de la valeur Y =
+
+
+Test 1 :
+0 : 12,0
+1 : 13,5
+2 : 8,5
+3 : 14,7
+4 : 6,0
+X = 13,5
+Y = 10,5
+
+Test 2 :
+
+Tableau Vide
+X = random
+Y = random
+Explication : Vérification du résultat des fonctions lorsqu'un tableau vide est prise en entrée
+
+Test 3 :
+0 : 5,0
+X = 5,0
+Y = 6,0
+Explication : Résultat des fcts lors d'un singleton en entrée ?
+
+Test 4 :
+0 : 9,99
+1 : 9,99
+2 : 9,99
+3 : 9,99
+4 : 9,99
+5 : 9,99
+X = 9,99
+Y = random
+Explication : Retour des fonctions avec un tableau dont les termes en entrée sont tous identiques

@@ -1,5 +1,5 @@
 all: fonctions.o main.o
-	gcc -o dessin -Wall fonctions.o main.o
+	gcc -o Main -Wall fonctions.o main.o
 	rm *.o
 	rm *.gch
 
