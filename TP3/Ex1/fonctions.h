@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-
 /* ----------------------------- FONCTIONS -----------------------------*/
 void afficherNotes(float *tab, int len);
 float minimumNote(float *tab, int len);
@@ -19,3 +18,7 @@ int test_calculMoy(float *tab_test, int len, float moy);
 int test_calculVar(float *tab_test, int len, float var);
 int test_calculEcT(float *tab_test, int len, float omega);
 int test_rechercherVal(float *tab_test, int len, float val, int index);
+
+/* ----------------------------- OPTIONNELLE -----------------------------*/
+void histogrammeHorizontal(float *tab, int len);
+void histogrammeVertical(float *tab, int len);

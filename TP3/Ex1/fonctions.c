@@ -175,3 +175,71 @@ int test_rechercherVal(float *tab_test, int len, float val, int index)
 
   return success;
 }
+
+/* ----------------------------- OPTIONNELLE -----------------------------*/
+
+void histogrammeHorizontal(float *tab, int len)
+{
+  int histo[10] = {0,0,0,0,0,0,0,0,0,0}; //Tableau contenant le nombre d'étoiles pour un intervalle de notes.
+  int index = 1;
+
+  if (tab != NULL){
+    for (int i = 0; i < len; i++)
+    {
+      while ((2*index <= tab[i]) && (index <= 10)) index++;
+      histo[index-1]++;
+      index = 1;
+    }
+  }
+
+  for (int j = 0; j < 10; j++)
+  {
+    printf("[ %d ; %d ] :  ",2*j, 2*j+2);
+    while (histo[j] != 0)
+    {
+      printf("*  ");
+      histo[j]--;
+    }
+    printf("\n");
+  }
+  printf("\n\n");
+}
+
+void histogrammeVertical(float *tab, int len)
+{
+  int histo[10] = {0,0,0,0,0,0,0,0,0,0};  //Tableau contenant le nombre d'étoiles pour un intervalle de notes.
+  int index = 1;
+  int max_histo = 0; //Le nombre maximal d'étoiles pour un intervalle de valeurs.
+
+  if (tab != NULL){
+    for (int i = 0; i < len; i++)
+    {
+      while ((2*index <= tab[i]) && (index <= 10)) index++;
+      histo[index-1]++;
+      if (histo[index-1] > max_histo) max_histo = histo[index-1];
+      index = 1;
+    }
+  }
+
+  //Décrementer max_histo dés que une ligne d'étoiles a été crée.
+  //
+  while (max_histo > 0)
+  {
+    for (int j = 0; j < 5; j++)
+    {
+      if (histo[j] < max_histo) printf("         ");
+      else printf("    *    ");
+    }
+    printf(" "); ///Pour aligner les étoiles sur les ";"
+    for (int j = 6; j < 10; j++)
+    {
+      if (histo[j] < max_histo) printf("           ");
+      else printf("     *     ");
+    }
+
+    max_histo--;
+    printf("\n");
+  }
+  for (int k = 0; k < 10; k++) printf("[ %d ; %d ]",2*k, 2*k+2);
+  printf("\n");
+}

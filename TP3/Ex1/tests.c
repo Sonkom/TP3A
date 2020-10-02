@@ -71,6 +71,18 @@ int main(void)
   if (test_rechercherVal(test3, 1, 5.0, rang3_1) && test_rechercherVal(test3, 5, 6.0, rang3_2)) printf("test 3 : succès\n");
   if (test_rechercherVal(test4, 6, 9.99, rang4_1) && test_rechercherVal(test4, 5, 9.99, rang4_2)) printf("test 4 : succès\n");
 
+ /*---- HISTOGRAMMES (partie optionnelle) ----*/
+
+  histogrammeHorizontal(test1, 5);
+  histogrammeHorizontal(test2, 42);
+  histogrammeHorizontal(test3, 1);
+  histogrammeHorizontal(test4, 6);
+
+  histogrammeVertical(test1, 5);
+  histogrammeVertical(test2, 42);
+  histogrammeVertical(test3, 1);
+  histogrammeVertical(test4, 6);
+
 
   return 0;
 }
