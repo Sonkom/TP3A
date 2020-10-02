@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXT 1024
+#define MAX 1024
 
 /*---- FONCTIONS ----*/
 int lireDonnees(char nomFichier[], int tab[]);

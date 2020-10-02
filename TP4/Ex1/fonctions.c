@@ -25,7 +25,8 @@ int lireDonnees(char nomFichier[], int tab[])
 
 void afficherTableau (int tab[], int nb)
 {
-  for (int i = 0; i < nb; i++) printf("tab[%d] = %d\n",i, tab[i]);
+  for (int i = 0; i < nb; i++) printf("%d  ",tab[i]);
+  printf("\n");
 }
 
 void swap_int(int *a, int *b) //Pour plus de clarté, une fonction dédié à l'inversage d'éléments sera dédiés
@@ -38,8 +39,8 @@ void swap_int(int *a, int *b) //Pour plus de clarté, une fonction dédié à l'
 void triABulles(int tab[], int nb)
 {
   for (int i = 0; i < nb; i++)
-    for (int j = nb - i; j > 0; j++)
-      if (tab[j] < tab[j-1]) swap((tab+j), (tab+j-1));
+    for (int j = nb - i; j > 0; j--)
+      if (tab[j] < tab[j-1]) swap_int((tab+j), (tab+j-1));
 }
 
 void enregistrerDonnees(char nomFichier[], int tab[], int nb)
@@ -56,6 +57,4 @@ void enregistrerDonnees(char nomFichier[], int tab[], int nb)
     fprintf(fichier, "%d ",tab[index]);
 
   fclose(fichier);
-  return 1;
-
 }
