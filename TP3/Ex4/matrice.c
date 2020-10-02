@@ -1,70 +1,99 @@
-#include <stdio.h>
 #include "matrice.h"
 
-//Initialise une matrice à zéro
-void initMatrice(int n, int m, int mat[n][m]){
-  for(int i=0; i<n; i++){
-    for(int j=0; j<m; j++){
-      mat[i][j] = 0;
-    }
-  }
+void initMatrice(int mat[SIZE][SIZE], int n, int m){
+	if( n > SIZE || m > SIZE){
+		printf("Erreur : Taille de la matrice trop élevée");
+	}else{
+		for(int i=0; i<n; i++){
+			for(int j=0; j<m; j++){
+				mat[i][j] = 0;
+			}
+		}
+	}
 }
 
-//Initialise une matrice à une constante c
-void initMatriceCons(int c, int n,int m, int mat[n][m]){
-  for(int i=0; i<n; i++){
-    for(int j=0; j<m; j++){
-      mat[i][j] = c;
-    }
-  }
+void initMatriceCons(int c,int mat[SIZE][SIZE], int n,int m){
+	if( n > SIZE || m > SIZE){
+		printf("Erreur : Taille de la matrice trop élevée");
+	}else{
+		for(int i=0; i<n; i++){
+			for(int j=0; j<m; j++){
+				mat[i][j] = c;
+			}
+		}
+	}
 }
 
-//Initialise une matrice aux valeurs rentrées par l'utilisateur
-void initMatriceUtil(int n, int m, int mat[n][m]){
-  int u = 0;
-  for(int i=0; i<n; i++){
-    for(int j=0; j<m; j++){
-      printf("X[%d][%d] : ",i,j);
-      scanf("%d", &u);
-      mat[i][j] = u;
-    }
-  }
+void initMatriceUtil(int mat[SIZE][SIZE], int n, int m){
+	if( n > SIZE || m > SIZE){
+		printf("Erreur : Taille de la matrice trop élevée");
+	}else{
+		int u = 0;
+		for(int i=0; i<n; i++){
+			for(int j=0; j<m; j++){
+				printf("X[%d][%d] : ",i,j);
+				scanf("%d", &u);
+				mat[i][j] = u;
+			}
+		}
+	}	
 }
 
-//affiche une matrice de taille (n,m)
-void afficheMatrice(int n, int m, int matr[n][m]){
-  printf("\n");
-  for(int i=0; i<n; i++){
-    printf("|");
-    for(int j=0; j<m; j++){
-      printf("  %d  ", mat[i][j]);
-    }
-    printf("|\n");
-  }
-  printf("\n");
+void afficheMatrice(int mat[SIZE][SIZE], int n, int m){
+	if( n > SIZE || m > SIZE){
+		printf("Erreur : Taille de la matrice trop élevée");
+	}else{
+		printf("\n");
+		for(int i=0; i<n; i++){
+			printf("|");
+			for(int j=0; j<m; j++){
+			printf("  %d  ", mat[i][j]);
+			}
+		printf("|\n");
+		}
+		printf("\n");
+	}
 }
 
-void sommeMatrice(int n, int m, int mat1[n][m], int mat2[n][m], int resultat[n][m]){
-  for(int i=0; i<n; i++){
-    for(int j=0; j<m; j++){
-      resultat[i][j] = mat1[i][j] + mat2[i][j];
-    }
-  }
+void sommeMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], int n2, int m2, int resultat[SIZE][SIZE], int n3, int m3){
+	if(n1 != n2 || m1 != m2){
+		printf("Erreur : Taille des matrices opérandes incohérantes\n");
+	}else if(n1 != n3 || m1 != m3){
+		printf("Erreur : Taille de la matrice résultat incohérante\n");
+	}else{
+		for(int i=0; i<n; i++){
+			for(int j=0; j<m; j++){
+				resultat[i][j] = mat1[i][j] + mat2[i][j];
+			}
+		}
+	}
 }
 
-void transpose(int n, int m, int mat1[n][m], int resultat[m][n]){
-  for(int i=0; i<n; i++){
-    for(int j=0; j<m; j++){
-      resultat[j][i] = mat1[i][j];
-    }
-  }
+void transpose(int mat1[SIZE][SIZE], int n1, int m1, int resultat[SIZE][SIZE], int n2, int m2){
+	if(n1 != m2 || m1 != n2){
+		printf("Erreur : Taille des matrices incohérantes\n");
+	}else{
+		for(int i=0; i<n1; i++){
+			for(int j=0; j<m1; j++){
+				resultat[j][i] = mat1[i][j];
+			}
+		}
+	}
 }
 
-void produitMatrice(int n, int m,int p, int mat1[n][m], int mat2[m][p], int resultat[n][p]){
-  for(int i=0; i<n; i++){
-    for(int j=0; j<p; j++){
-      int resultat[i][j] = 0;
-
-    }
-  }
+void produitMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], int n2, int m2, int resultat[SIZE][SIZE], int n3, int m3){
+	if(m1 != n2){
+		printf("Erreur : Taille des matrices opérandes incohérantes\n");
+	else if(n1 != n3 || m2 != m3){
+		printf("Erreur : Taille de la matrice résultat incohérante\n");
+	}else{
+		for(int i=0; i<n3; i++){
+			for(int j=0; j<p3; j++){
+				resultat[i][j] = 0;
+				for(int k=0; k<m1; k++){
+					resultat[i][j] += mat1[i][k] * mat2[k][j];
+				}
+			}
+		}
+	}
 }
