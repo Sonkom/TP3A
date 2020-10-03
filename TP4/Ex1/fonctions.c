@@ -2,20 +2,20 @@
 
 int lireDonnees(char nomFichier[], int tab[])
 {
-  int buff = 0, index = 0;
+  int buff;
+  int index = 0;
   FILE *fichier;
   int len = 0;
 
     fichier = fopen(nomFichier, "r");
     if(fichier == NULL) {
-      perror("Probleme ouverture fichier monFichier.txt");
+      perror("Probleme d'ouverture fichier");
       exit(1);
     }
 
   while(!feof(fichier))
   {
     fscanf(fichier, "%d", &buff);
-    //printf("Valeur lue = %d\n", buff);
     tab[index] = buff;
     index++;
     len++;
@@ -50,7 +50,7 @@ void enregistrerDonnees(char nomFichier[], int tab[], int nb)
 
   fichier = fopen(nomFichier, "w");
   if(fichier == NULL) {
-    perror("Probleme ouverture fichier monFichier.txt");
+    perror("Probleme d'ouverture fichier");
     exit(1);
   }
 
