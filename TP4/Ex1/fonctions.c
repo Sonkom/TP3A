@@ -4,7 +4,7 @@ int lireDonnees(char nomFichier[], int tab[])
 {
   int buff = 0, index = 0;
   FILE *fichier;
-  int success = 0;
+  int len = 0;
 
     fichier = fopen(nomFichier, "r");
     if(fichier == NULL) {
@@ -15,12 +15,13 @@ int lireDonnees(char nomFichier[], int tab[])
   while(!feof(fichier))
   {
     fscanf(fichier, "%d", &buff);
+    //printf("Valeur lue = %d\n", buff);
     tab[index] = buff;
     index++;
-    success++;
+    len++;
   }
   fclose(fichier);
-  return success;
+  return len;
 }
 
 void afficherTableau (int tab[], int nb)
