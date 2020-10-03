@@ -38,9 +38,9 @@ void swap_int(int *a, int *b) //Pour plus de clarté, une fonction dédié à l'
 
 void triABulles(int tab[], int nb)
 {
-  for (int i = 0; i < nb; i++)
-    for (int j = nb - i; j > 0; j--)
-      if (tab[j] < tab[j-1]) swap_int((tab+j), (tab+j-1));
+  for(int i = 0; i < nb-1; i++)
+    for (int j = 0; j < nb-1; j++)
+      if (tab[j] > tab[j+1]) swap_int((tab+j), (tab+j+1));
 }
 
 void enregistrerDonnees(char nomFichier[], int tab[], int nb)
