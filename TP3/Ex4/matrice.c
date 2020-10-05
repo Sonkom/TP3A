@@ -2,7 +2,7 @@
 
 void initMatrice(int mat[SIZE][SIZE], int n, int m){
 	if( n > SIZE || m > SIZE){
-		printf("Erreur : Taille de la matrice supérieur à %d\n", SIZE);
+		printf("Erreur : Taille de la matrice supérieure à %d\n", SIZE);
 
 	}else{
 		for(int i=0; i<n; i++){
@@ -15,7 +15,7 @@ void initMatrice(int mat[SIZE][SIZE], int n, int m){
 
 void initMatriceCons(int c,int mat[SIZE][SIZE], int n,int m){
 	if( n > SIZE || m > SIZE){
-		printf("Erreur : Taille de la matrice supérieur à %d\n", SIZE);
+		printf("Erreur : Taille de la matrice supérieure à %d\n", SIZE);
 
 	}else{
 		for(int i=0; i<n; i++){
@@ -28,7 +28,7 @@ void initMatriceCons(int c,int mat[SIZE][SIZE], int n,int m){
 
 void initMatriceUtil(int mat[SIZE][SIZE], int n, int m){
 	if( n > SIZE || m > SIZE){
-		printf("Erreur : Taille de la matrice supérieur à %d\n", SIZE);
+		printf("Erreur : Taille de la matrice supérieure à %d\n", SIZE);
 
 	}else{
 		int u = 0;
@@ -44,7 +44,7 @@ void initMatriceUtil(int mat[SIZE][SIZE], int n, int m){
 
 void afficheMatrice(int mat[SIZE][SIZE], int n, int m){
 	if( n > SIZE || m > SIZE){
-		printf("Erreur : Taille de la matrice supérieur à %d\n", SIZE);
+		printf("Erreur : Taille de la matrice supérieure à %d\n", SIZE);
 
 	}else{
 		printf("\n");
@@ -61,7 +61,7 @@ void afficheMatrice(int mat[SIZE][SIZE], int n, int m){
 
 void sommeMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], int n2, int m2, int resultat[SIZE][SIZE], int n3, int m3){
 	if( n1 > SIZE || m1 > SIZE || n2 > SIZE || m2 > SIZE || n3 > SIZE || m3 > SIZE){
-		printf("Erreur : Taille d'au moins une des matrices supérieur à %d\n", SIZE);
+		printf("Erreur : Taille d'au moins une des matrices supérieure à %d\n", SIZE);
 
 	}else if(n1 != n2 || m1 != m2){
 		printf("Erreur : Taille des matrices opérandes incohérantes\n");
@@ -80,7 +80,7 @@ void sommeMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], in
 
 void transpose(int mat1[SIZE][SIZE], int n1, int m1, int resultat[SIZE][SIZE], int n2, int m2){
 	if( n1 > SIZE || m1 > SIZE || n2 > SIZE || m2 > SIZE){
-		printf("Erreur : Taille d'au moins une des matrices supérieur à %d\n", SIZE);
+		printf("Erreur : Taille d'au moins une des matrices supérieure à %d\n", SIZE);
 
 	}else if(n1 != m2 || m1 != n2){
 		printf("Erreur : Taille des matrices incohérantes\n");
@@ -96,7 +96,7 @@ void transpose(int mat1[SIZE][SIZE], int n1, int m1, int resultat[SIZE][SIZE], i
 
 void produitMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], int n2, int m2, int resultat[SIZE][SIZE], int n3, int m3){
 	if( n1 > SIZE || m1 > SIZE || n2 > SIZE || m2 > SIZE || n3 > SIZE || m3 > SIZE){
-		printf("Erreur : Taille d'au moins une des matrices supérieur à %d\n", SIZE);
+		printf("Erreur : Taille d'au moins une des matrices supérieure à %d\n", SIZE);
 
 	}else if(m1 != n2){
 		printf("Erreur : Taille des matrices opérandes incohérantes\n");
