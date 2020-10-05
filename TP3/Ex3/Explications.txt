@@ -1,0 +1,10 @@
+Le programme présenté présente le nombre d'argument mis lors de l'appel de de l'exécution et les listes un par un, en partant du dernier.
+Voici un exemple :
+
+sonkom@BluComputer:~/Documents/TP3A/TP3/Ex3$ ./Prog -abcd -efgh -test prog.c TP3
+Nombre d'arguments : 6
+TP3
+prog.c
+-test
+-efgh
+-abcd
