@@ -67,7 +67,7 @@ void sommeMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], in
 		printf("Erreur : Taille des matrices opérandes incohérantes\n");
 
 	}else if(n1 != n3 || m1 != m3){
-		printf("Erreur : Taille de la matrice résultat incohérante\n");
+		printf("Erreur : Taille de la matrice résultante incohérante\n");
 
 	}else{
 		for(int i=0; i<n1; i++){
@@ -102,7 +102,7 @@ void produitMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], 
 		printf("Erreur : Taille des matrices opérandes incohérantes\n");
 
 	}else if(n1 != n3 || m2 != m3){
-		printf("Erreur : Taille de la matrice résultat incohérante\n");
+		printf("Erreur : Taille de la matrice résultante incohérante\n");
 
 	}else{
 		for(int i=0; i<n3; i++){

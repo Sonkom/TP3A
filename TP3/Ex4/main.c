@@ -17,8 +17,8 @@ int main() {
   sommeMatrice(mat1, n, m, mat2, n, m, mat3, n , m);
   afficheMatrice(mat3, n, m);
 
-  printf("Exemple de transposé de matrice : \n");
-  printf("La transposé de : \n");
+  printf("Exemple de transposée de matrice : \n");
+  printf("La transposée de : \n");
   afficheMatrice(mat1, n, m);
   printf("est :\n");
   transpose(mat1, n, m, mat3, m, n);
