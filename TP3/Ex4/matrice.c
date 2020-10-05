@@ -2,7 +2,8 @@
 
 void initMatrice(int mat[SIZE][SIZE], int n, int m){
 	if( n > SIZE || m > SIZE){
-		printf("Erreur : Taille de la matrice trop élevée");
+		printf("Erreur : Taille de la matrice supérieur à %d\n", SIZE);
+
 	}else{
 		for(int i=0; i<n; i++){
 			for(int j=0; j<m; j++){
@@ -14,7 +15,8 @@ void initMatrice(int mat[SIZE][SIZE], int n, int m){
 
 void initMatriceCons(int c,int mat[SIZE][SIZE], int n,int m){
 	if( n > SIZE || m > SIZE){
-		printf("Erreur : Taille de la matrice trop élevée");
+		printf("Erreur : Taille de la matrice supérieur à %d\n", SIZE);
+
 	}else{
 		for(int i=0; i<n; i++){
 			for(int j=0; j<m; j++){
@@ -26,7 +28,8 @@ void initMatriceCons(int c,int mat[SIZE][SIZE], int n,int m){
 
 void initMatriceUtil(int mat[SIZE][SIZE], int n, int m){
 	if( n > SIZE || m > SIZE){
-		printf("Erreur : Taille de la matrice trop élevée");
+		printf("Erreur : Taille de la matrice supérieur à %d\n", SIZE);
+
 	}else{
 		int u = 0;
 		for(int i=0; i<n; i++){
@@ -36,12 +39,13 @@ void initMatriceUtil(int mat[SIZE][SIZE], int n, int m){
 				mat[i][j] = u;
 			}
 		}
-	}	
+	}
 }
 
 void afficheMatrice(int mat[SIZE][SIZE], int n, int m){
 	if( n > SIZE || m > SIZE){
-		printf("Erreur : Taille de la matrice trop élevée");
+		printf("Erreur : Taille de la matrice supérieur à %d\n", SIZE);
+
 	}else{
 		printf("\n");
 		for(int i=0; i<n; i++){
@@ -56,13 +60,18 @@ void afficheMatrice(int mat[SIZE][SIZE], int n, int m){
 }
 
 void sommeMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], int n2, int m2, int resultat[SIZE][SIZE], int n3, int m3){
-	if(n1 != n2 || m1 != m2){
+	if( n1 > SIZE || m1 > SIZE || n2 > SIZE || m2 > SIZE || n3 > SIZE || m3 > SIZE){
+		printf("Erreur : Taille d'au moins une des matrices supérieur à %d\n", SIZE);
+
+	}else if(n1 != n2 || m1 != m2){
 		printf("Erreur : Taille des matrices opérandes incohérantes\n");
+
 	}else if(n1 != n3 || m1 != m3){
 		printf("Erreur : Taille de la matrice résultat incohérante\n");
+
 	}else{
-		for(int i=0; i<n; i++){
-			for(int j=0; j<m; j++){
+		for(int i=0; i<n1; i++){
+			for(int j=0; j<m1; j++){
 				resultat[i][j] = mat1[i][j] + mat2[i][j];
 			}
 		}
@@ -70,8 +79,12 @@ void sommeMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], in
 }
 
 void transpose(int mat1[SIZE][SIZE], int n1, int m1, int resultat[SIZE][SIZE], int n2, int m2){
-	if(n1 != m2 || m1 != n2){
+	if( n1 > SIZE || m1 > SIZE || n2 > SIZE || m2 > SIZE){
+		printf("Erreur : Taille d'au moins une des matrices supérieur à %d\n", SIZE);
+
+	}else if(n1 != m2 || m1 != n2){
 		printf("Erreur : Taille des matrices incohérantes\n");
+
 	}else{
 		for(int i=0; i<n1; i++){
 			for(int j=0; j<m1; j++){
@@ -82,13 +95,18 @@ void transpose(int mat1[SIZE][SIZE], int n1, int m1, int resultat[SIZE][SIZE], i
 }
 
 void produitMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], int n2, int m2, int resultat[SIZE][SIZE], int n3, int m3){
-	if(m1 != n2){
+	if( n1 > SIZE || m1 > SIZE || n2 > SIZE || m2 > SIZE || n3 > SIZE || m3 > SIZE){
+		printf("Erreur : Taille d'au moins une des matrices supérieur à %d\n", SIZE);
+
+	}else if(m1 != n2){
 		printf("Erreur : Taille des matrices opérandes incohérantes\n");
-	else if(n1 != n3 || m2 != m3){
+
+	}else if(n1 != n3 || m2 != m3){
 		printf("Erreur : Taille de la matrice résultat incohérante\n");
+
 	}else{
 		for(int i=0; i<n3; i++){
-			for(int j=0; j<p3; j++){
+			for(int j=0; j<m3; j++){
 				resultat[i][j] = 0;
 				for(int k=0; k<m1; k++){
 					resultat[i][j] += mat1[i][k] * mat2[k][j];

@@ -1,12 +1,17 @@
+#include <stdio.h>
 
-void initMatrice(int n, int m, int matrice[n][m]);
+#define SIZE 10
 
-void afficheMatrice(int n, int m, int matrice[n][m]);
+void initMatrice(int mat[SIZE][SIZE], int n, int m);
 
-void initMatriceCons(int c, int n,int m, int matrice[n][m]);
+void initMatriceCons(int c,int mat[SIZE][SIZE], int n,int m);
 
-void initMatriceUtil(int n, int m, int matrice[n][m]);
+void initMatriceUtil(int mat[SIZE][SIZE], int n, int m);
 
-void sommeMatrice(int n, int m, int m1[n][m], int m2[n][m], int resultat[n][m]);
+void afficheMatrice(int mat[SIZE][SIZE], int n, int m);
 
-void transpose(int n, int m, int mat1[n][m], int resultat[m][n]);
+void sommeMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], int n2, int m2, int resultat[SIZE][SIZE], int n3, int m3);
+
+void transpose(int mat1[SIZE][SIZE], int n1, int m1, int resultat[SIZE][SIZE], int n2, int m2);
+
+void produitMatrice(int mat1[SIZE][SIZE], int n1, int m1, int mat2[SIZE][SIZE], int n2, int m2, int resultat[SIZE][SIZE], int n3, int m3);
