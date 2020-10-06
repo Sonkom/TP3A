@@ -1,7 +1,7 @@
 #include "Fraction.h"
 
 
-void addFraction(Fraction f1, Fraction f2);
+void addFraction(Fraction f1, Fraction f2)
 {
   int num1 = f1.num;
   int num2 = f2.num;
@@ -18,10 +18,10 @@ void addFraction(Fraction f1, Fraction f2);
   forme_reduite_fraction(&num_result, &den_result);
 
   printf("Résultat de l'addition des fractions : %d / %d\n",num_result, den_result);
-.}
+}
 
 
-void subFraction(Fraction f1, Fraction f2);
+void subFraction(Fraction f1, Fraction f2)
 {
   int num1 = f1.num;
   int num2 = f2.num;
@@ -41,7 +41,7 @@ void subFraction(Fraction f1, Fraction f2);
 }
 
 
-void mulFraction(Fraction f1, Fraction f2);
+void mulFraction(Fraction f1, Fraction f2)
 {
   int num_result, den_result;
 
