@@ -20,6 +20,7 @@ int lireDonnees(char nomFichier[], int tab[])
     index++;
     len++;
   }
+  len--;
   fclose(fichier);
   return len;
 }
