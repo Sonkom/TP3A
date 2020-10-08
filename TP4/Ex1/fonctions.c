@@ -20,7 +20,8 @@ int lireDonnees(char nomFichier[], int tab[])
     index++;
     len++;
   }
-  len--;
+  len--; /*Un problme a lieu lors de la détection de la fin du fichier (feof()) : le dernier int se lit 2 fois.
+          Après discussion avec l'intervenant de TP, nous avons décidé pour cette solution : len--*/ 
   fclose(fichier);
   return len;
 }

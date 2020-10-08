@@ -1,0 +1,8 @@
+Je vous expliquerai ici le choix des tests :
+
+- test1 : Une chaîne d'entier choisis aléatoirement
+- test2 : Une chaîne d'entier choisis aléatoirement. Des plus grands nombres sont présents pour vérifier la bonne lecture de l'entier (même grand)
+- test3 : Une chaîne d'entier quasiment trié sauf quelques uns qui ont été échangés. Nous voulons vérifier le bon fonctionnement du tri (éviter d'échanger des nombres déjà trié)
+- test4 : Une chaîne d'entier trié dans le sens inverse. Nous voulons vérifier le bon fonctionnement du tri. (C'est avec cette chaîne qu'il y aura le plus d'échange d'entier avec cette algorithme de tri)
+- test5 : Un entier unique est donné. Nous voulons vérifier si tout fonctionne avec un singleton en entrée.
+- test6 : Une chaîne vide. Nous voulons vérifier l'absence de problème en cas de passage de tableau vide en entier.
