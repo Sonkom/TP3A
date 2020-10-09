@@ -23,3 +23,5 @@ int estPalindrome(char * mot,int d, int f);
 int comparerChaine(char op1[], char op2[]);
 
 int valeurDecimale(char src[]);
+
+void intVersChaine(int d, char dest[]);

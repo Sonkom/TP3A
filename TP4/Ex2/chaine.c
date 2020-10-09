@@ -111,8 +111,11 @@ int valeurDecimale(char src[]){
 
 void intVersChaine(int d, char dest[]){
   int puissance=1, c;
-  for(c = 0; d < 10*puissance; c++);
-  for(; d != 0; d/10){
-    dest[c]=
+  for(c = 0; d > 10*puissance; c++) puissance *= 10;
+  dest[c+1] = '\0';
+  for(int i = 0; c-i >= 0; i++){
+    dest[i] = d/puissance + '0';
+    d = d % puissance;
+    puissance /= 10;
   }
 }
