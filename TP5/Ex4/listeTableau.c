@@ -62,9 +62,12 @@ void supprimerElement(int x, liste l){
 void afficherListe(liste l){
   int index = l->suivant, print_index = 1;
 
-  do {
-    printf("%dème élément de la liste : %d\n",print_index, (l+index)->valeur);
-    print_index++;
-    index = (l+index)->suivant;
-  } while (index != 0)
+  if (index == 0) printf("Liste vide\n");
+  else {
+    do {
+      printf("%dème élément de la liste : %d\n",print_index, (l+index)->valeur);
+      print_index++;
+      index = (l+index)->suivant;
+    } while (index != 0);
+  }
 }
