@@ -20,7 +20,10 @@ int elementLibre(liste l){
 void creerListeVide(liste l){
   int index = 1;
   l->suivant = 0;
-  while ((l+index) != NULL) (l+index)->suivant = -1;
+  while ((l+index) != NULL){
+    (l+index)->suivant = -1;
+    index++;
+  }
 }
 void insererElement(int x, liste l){
   //initalisation
@@ -37,7 +40,7 @@ void insererElement(int x, liste l){
   (l+next_index)->suivant = 0;
 }
 
-void supprimerElement(int x, liste l){
+void supprimerElement(int i, liste l){
   //initalisation
   int next_index = 0, prev_index = 0, buffer;
 
