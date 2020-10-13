@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 
-#define TAILLEMAX 100
+#define TAILLEMAX 1000
 
 typedef struct {
 	int valeur ;
@@ -26,8 +26,8 @@ typedef element* liste;
    (suivant = -1). On suppose qu'il y en a toujours un */
 int elementLibre(liste l);
 
-/* Initialise le tableau de sorte que tous les éléments soient libres (suivant = -1)
-   sauf celui d'indice 0 où suivant == 0*/
+/* Initialise le tableau de sorte que tous les ï¿½lï¿½ments soient libres (suivant = -1)
+   sauf celui d'indice 0 oï¿½ suivant == 0*/
 void creerListeVide(liste l);
 
 /* Affiche les elements de la liste dans l'ordre */
@@ -36,8 +36,8 @@ void afficherListe(liste l);
 /* Ajoute x dans la liste triee l */
 void insererElement(int x, liste l);
 
-/* Supprime le i-ème élément de l, i = 1,2... */
-void supprimerElement(int i, liste l);
+/* Supprime le i-ï¿½me ï¿½lï¿½ment de l, i = 1,2... */
+void supprimerElement(int x, liste l);
 
 void compacterListe(liste l);
 
