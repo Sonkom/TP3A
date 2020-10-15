@@ -50,7 +50,7 @@ int main(){
 	p1[2].degre = 0;
 	p1[2].coeff = 3;
 	p1[3].degre = -1;
-	
+
 	p2[0].degre = 4;
 	p2[0].coeff = 1;
 	p2[1].degre = 1;
@@ -58,7 +58,7 @@ int main(){
 	p2[2].degre = 0;
 	p2[2].coeff = 3;
 	p2[3].degre = -1;
-	
+
 	addPolynomes(p1, p2, res);
 	affichePolynome(res);
 }
