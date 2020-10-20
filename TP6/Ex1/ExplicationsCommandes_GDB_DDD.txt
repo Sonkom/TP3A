@@ -1,0 +1,17 @@
+L'exercice 3 du TP n°5 a été pris comme "cobaye" à l'utilisation de DDD (et GDB par extension).
+
+Le "-g" a été ajouté dans les commandes de compliations pour main.o et pile.o.
+
+Dans le débogueur, divers breakpoints ont été placés (avec la commande `breakpoint + N`, N étant le numéro de la ligne).
+Après plusieurs tests, l'utilité des commandes suivantes a pu être déterminée :
+
+run : Exécute le programme à partir du début et s'arrête jusqu'au 1er breakpoint
+next : Effectue les instrutctions de la ligne où le programme s'est arrété et passe à la ligne suivante
+step : Même chose que step. Si la ligne contient un appel de fonctions, elle va y rentrer et s'arrêter à la 1ère ligne de la fonction
+stepi : Même chose que step, sauf qu'au lieu de continuer le programme ligne par ligne, il va continuer expression par expression (pertinent lorsqu'on effectue des boucles for par exemple)
+nexti : Même principe que next et les modifications du `i` dans stepi.
+print : Affiche les variables demandées (passées en arugment) et l'enregistre dans "l'historique".
+            Si aucun argument n'est fourni, affiche l'ensemble des variables enregistrées dans "l'historique"
+display : Ajoute la variable passée en argument dans une liste. Chaque variable enregistrée dans cette liste sera affichée à chaque arrêt du programme (next, step ou breakpoint).
+continue : continue le programme jusqu'au prochain breakpoint (ou jusqu'à la fin du programme à défaut)
+finish : même chose que continue, sauf qu'il arrête le programme dés qu'un return est atteint (en fin de fonction par exemple)
