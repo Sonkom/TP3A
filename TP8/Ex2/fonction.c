@@ -46,7 +46,7 @@ void insererElement(int valeur, int ligne, int colonne, matrice *tete) {
         nouveau->ligne = ligne;
         nouveau->colonne = colonne;
 
-        if (e == NULL) { /* la tête alouette */
+        if (e == NULL) {
             nouveau->suivant_ligne = nouveau;
             nouveau->suivant_colonne = nouveau;
 
@@ -130,7 +130,7 @@ void afficherMatrice(matrice m) {
     int i, j;
     element *e;
 
-    printf("----- Début -----\n");
+    printf("-----------------\n");
     for (i = 0; i < nb_lignes; i++) {
         for(j = 0; j < nb_colonnes; j++) {
             e = recupererElement(&m, i, j);
@@ -145,44 +145,9 @@ void afficherMatrice(matrice m) {
         }
         printf("\n");
     }
-    printf("-----  Fin  -----\n\n");
+    printf("-----------------\n\n");
 }
 
-
-/*Version classique*/
-/*void sommeMatrices(matrice m1, matrice m2, matrice *resultat) {
-    int nb_lignes = m1->ligne, nb_colonnes = m1->colonne;
-    int i, j, valeur;
-    element *e1, *e2;
-
-    if (nb_lignes != m2->ligne || nb_colonnes != m2->colonne) {
-        printf("Erreur : les matrices n'ont pas les mêmes dimensions.\n");
-    } else {
-        creerMatrice(NULL, nb_lignes, nb_colonnes, resultat); /* matrice vide *//*
-
-        for (i = 0; i < nb_lignes; i++) {
-            for(j = 0; j < nb_colonnes; j++) {
-                e1 = recupererElement(&m1, i, j);
-                e2 = recupererElement(&m2, i, j);
-                valeur = 0;
-
-                if( e1 != NULL ) {
-                    valeur += e1->valeur;
-                }
-
-                if ( e2 != NULL ) {
-                    valeur += e2->valeur;
-                }
-
-                if (valeur != 0) {
-                    insererElement(valeur, i, j, resultat);
-                }
-            }
-        }
-    }
-}*/
-
-/*Version économie de comparaisons*/
 void sommeMatrices(matrice m1, matrice m2, matrice *resultat) {
     int nb_lignes = m1->ligne, nb_colonnes = m1->colonne;
     int i, j;
@@ -193,7 +158,7 @@ void sommeMatrices(matrice m1, matrice m2, matrice *resultat) {
     } else {
         creerMatrice(NULL, nb_lignes, nb_colonnes, resultat); /* matrice vide */
 
-        for(i = 0 ; i < nb_lignes ; i++) {
+        for(i = 0 ; i < nb_lignes ; i++) {/* copie des valeurs de m1 dans résultat */
             ligne_actuelle = recupererElement(&m1, i, -1);
             e1 = ligne_actuelle;
 
@@ -209,7 +174,7 @@ void sommeMatrices(matrice m1, matrice m2, matrice *resultat) {
             }
         }
 
-        for(i = 0 ; i < nb_lignes ; i++) {
+        for(i = 0 ; i < nb_lignes ; i++) { /* ajout de m2 */
             ligne_actuelle = recupererElement(&m2, i, -1);
             e2 = ligne_actuelle;
 
